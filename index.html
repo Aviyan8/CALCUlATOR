@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login + Calculator App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login/Register Section -->
+  <div id="auth-container">
+    <div id="login-form" class="auth-form">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+      <div class="message" id="login-message"></div>
+    </div>
+
+    <div id="register-form" class="auth-form hidden">
+      <h2>Register</h2>
+      <input type="text" id="register-username" placeholder="Username" />
+      <input type="password" id="register-password" placeholder="Password" />
+      <button onclick="register()">Register</button>
+      <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+      <div class="message" id="register-message"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="hidden">
+    <h2>Welcome, <span id="user-name"></span>!</h2>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+
+    <div class="calculator-container">
+      <div class="display" id="display">0</div>
+      <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button onclick="appendValue('(')">(</button>
+        <button onclick="appendValue(')')">)</button>
+        <button onclick="appendValue('/')">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="hi.js"></script>
+</body>
+</html>
